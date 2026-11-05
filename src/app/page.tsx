@@ -1,126 +1,125 @@
 
-const modules = [
+import {
+  BookOpen,
+  GraduationCap,
+  Languages,
+  Headphones,
+  Target,
+  Clock,
+} from "lucide-react";
+
+const features = [
   {
-    icon: "📚",
-    title: "Học từ vựng",
-    description: "Học từ mới, flashcard và ôn tập.",
+    title: "Từ vựng",
+    description: "Học và ghi nhớ từ vựng tiếng Hàn",
+    icon: BookOpen,
+    color: "bg-blue-100 text-blue-700",
   },
   {
-    icon: "📝",
-    title: "Học ngữ pháp",
-    description: "Công thức, ví dụ và bài tập.",
+    title: "Ngữ pháp",
+    description: "Hệ thống ngữ pháp từ sơ cấp đến cao cấp",
+    icon: GraduationCap,
+    color: "bg-purple-100 text-purple-700",
   },
   {
-    icon: "🔎",
-    title: "Từ điển Hàn - Việt",
-    description: "Tra cứu từ vựng nhanh chóng.",
+    title: "Từ điển",
+    description: "Tra cứu Hàn - Việt và Việt - Hàn",
+    icon: Languages,
+    color: "bg-green-100 text-green-700",
   },
   {
-    icon: "🎧",
     title: "Luyện nghe",
-    description: "Luyện nghe theo cấp độ TOPIK.",
-  },
-  {
-    icon: "📖",
-    title: "Luyện đọc",
-    description: "Thực hành đọc hiểu tiếng Hàn.",
-  },
-  {
-    icon: "🎓",
-    title: "Thi thử TOPIK",
-    description: "Thi thử và xem kết quả.",
+    description: "Cải thiện kỹ năng nghe TOPIK",
+    icon: Headphones,
+    color: "bg-orange-100 text-orange-700",
   },
 ];
 
-export default function Home() {
+export default function DashboardPage() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-800">
-      <header className="border-b bg-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-          <h1 className="text-2xl font-bold text-indigo-700">
-            Korean Study
-          </h1>
-
-          <nav className="flex items-center gap-3">
-            <a
-              href="/login"
-              className="rounded-lg px-4 py-2 font-medium hover:bg-slate-100"
-            >
-              Đăng nhập
-            </a>
-
-            <a
-              href="/register"
-              className="rounded-lg bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700"
-            >
-              Đăng ký
-            </a>
-          </nav>
-        </div>
-      </header>
-
-      <section className="mx-auto max-w-7xl px-6 py-20">
-        <div className="max-w-3xl">
-          <p className="mb-4 font-semibold text-indigo-600">
-            LEARN KOREAN EVERY DAY
-          </p>
-
-          <h2 className="text-4xl font-bold leading-tight md:text-5xl">
-            Học tiếng Hàn dễ dàng,
-            <span className="text-indigo-600">
-              {" "}chinh phục TOPIK
-            </span>
-          </h2>
-
-          <p className="mt-6 text-lg leading-8 text-slate-500">
-            Nền tảng học tiếng Hàn toàn diện.
-            Học từ vựng, ngữ pháp, tra cứu và
-            luyện thi TOPIK trong một nơi.
-          </p>
-
-          <a
-            href="/login"
-            className="mt-8 inline-block rounded-xl bg-indigo-600 px-7 py-3 font-semibold text-white hover:bg-indigo-700"
-          >
-            Bắt đầu học ngay
-          </a>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 pb-20">
-        <h3 className="mb-2 text-2xl font-bold">
-          Khám phá Korean Study
-        </h3>
-
-        <p className="mb-8 text-slate-500">
-          Tất cả công cụ học tiếng Hàn bạn cần.
+    <div className="space-y-8">
+      <section>
+        <p className="text-sm font-medium text-blue-600">
+          KOREAN STUDY
         </p>
+        <h2 className="mt-2 text-3xl font-bold text-slate-900">
+          Chào mừng bạn trở lại!
+        </h2>
+        <p className="mt-2 text-slate-500">
+          Hãy dành một chút thời gian để tiến bộ hơn mỗi ngày.
+        </p>
+      </section>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {modules.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-lg"
-            >
-              <div className="mb-4 text-4xl">
-                {item.icon}
-              </div>
+      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="rounded-2xl bg-blue-700 p-6 text-white">
+          <BookOpen size={25} />
+          <p className="mt-4 text-sm text-blue-100">Từ vựng đã học</p>
+          <p className="mt-1 text-3xl font-bold">0</p>
+          <p className="mt-2 text-xs text-blue-100">Từ vựng đã ghi nhớ</p>
+        </div>
 
-              <h4 className="mb-2 text-lg font-bold">
-                {item.title}
-              </h4>
+        <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <Target size={25} className="text-purple-600" />
+          <p className="mt-4 text-sm text-slate-500">Mục tiêu hôm nay</p>
+          <p className="mt-1 text-3xl font-bold text-slate-900">0/20</p>
+          <p className="mt-2 text-xs text-slate-400">Từ vựng cần học</p>
+        </div>
 
-              <p className="text-sm text-slate-500">
-                {item.description}
-              </p>
-            </div>
-          ))}
+        <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <Clock size={25} className="text-orange-600" />
+          <p className="mt-4 text-sm text-slate-500">Thời gian học</p>
+          <p className="mt-1 text-3xl font-bold text-slate-900">0 giờ</p>
+          <p className="mt-2 text-xs text-slate-400">Thời gian học hôm nay</p>
         </div>
       </section>
 
-      <footer className="border-t bg-white px-6 py-8 text-center text-sm text-slate-500">
-        © 2026 Korean Study. Learn Korean every day.
-      </footer>
-    </main>
+      <section>
+        <div className="mb-4">
+          <h3 className="text-xl font-bold text-slate-900">
+            Khu vực học tập
+          </h3>
+          <p className="mt-1 text-sm text-slate-500">
+            Chọn nội dung bạn muốn học hôm nay.
+          </p>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map((feature) => {
+            const Icon = feature.icon;
+
+            return (
+              <div
+                key={feature.title}
+                className="rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md"
+              >
+                <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${feature.color}`}>
+                  <Icon size={24} />
+                </div>
+
+                <h4 className="mt-4 font-semibold text-slate-900">
+                  {feature.title}
+                </h4>
+
+                <p className="mt-2 text-sm leading-6 text-slate-500">
+                  {feature.description}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="rounded-2xl border border-slate-200 bg-white p-6">
+        <h3 className="font-bold text-slate-900">Tiến độ học tập</h3>
+        <p className="mt-2 text-sm text-slate-500">
+          Dữ liệu tiến độ sẽ được cập nhật khi chúng ta hoàn thành chức năng
+          từ vựng, ngữ pháp và luyện thi.
+        </p>
+        <div className="mt-5 h-3 overflow-hidden rounded-full bg-slate-100">
+          <div className="h-full w-0 rounded-full bg-blue-600" />
+        </div>
+        <p className="mt-2 text-right text-xs text-slate-400">0%</p>
+      </section>
+    </div>
   );
 }
